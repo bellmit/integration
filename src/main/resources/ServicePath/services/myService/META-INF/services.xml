@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+    <service name="oaService" scope="application"
+             targetNamespace="http://impl.service.axis.qunjie.com/"> <!--接口名称-->
+        <schema schemaNamespace="http://impl.service.axis.qunjie.com/"/>
+        <description>
+        </description>
+
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.qunjie.axis.service.impl.OAServiceImpl</parameter><!--接口实现类-->
+        <!--接口实现类-->
+        <!--    <parameter name="SpringBeanName">demoService</parameter>
+            <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier</parameter>-->
+    </service>
+
+    <service name="testService" scope="application"><!--接口名称-->
+        <description>
+        </description>
+
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.qunjie.axis.service.impl.TestServiceImpl</parameter><!--接口实现类-->
+        <!--接口实现类-->
+        <!--    <parameter name="SpringBeanName">demoService</parameter>
+            <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier</parameter>-->
+    </service>
+
+</serviceGroup>

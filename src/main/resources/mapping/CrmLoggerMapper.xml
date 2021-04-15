@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qunjie.mysql.mapper.CrmLoggerMapper">
+
+    <insert id="add" parameterType="com.qunjie.mysql.model.LoggerEntity">
+        insert into crm_log(indocno,date,args,code,response,method) values(#{condition.indocno},#{condition.date},#{condition.args}
+        ,#{condition.code},#{condition.response},#{condition.method})
+    </insert>
+
+</mapper>

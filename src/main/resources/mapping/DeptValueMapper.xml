@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qunjie.mysql.mapper.DeptValueMapper">
+
+    <select id="findByCondition" parameterType="com.qunjie.mysql.param.DeptValueParam"
+            resultType="com.qunjie.mysql.model.DeptValue">
+       select * from dept_value
+       <where>
+           <if test="condition.indocno != null">
+               and indocno = #{condition.indocno}
+           </if>
+           <if test="condition.deptid != null">
+               and deptid = #{condition.deptid}
+           </if>
+           <if test="condition.departid != null">
+               and departid = #{condition.departid}
+           </if>
+           <if test="condition.deptnm != null and condition.deptnm != ''">
+               and deptnm = #{condition.deptnm}
+           </if>
+       </where>
+    </select>
+
+    <insert id="insertDept" parameterType="com.qunjie.mysql.model.DeptValue">
+        insert into dept_value(indocno,deptid,departid,deptnm)
+        value(#{condition.indocno},#{condition.deptid},#{condition.departid},#{condition.deptnm})
+    </insert>
+
+    <update id="updDept" parameterType="com.qunjie.mysql.model.DeptValue">
+        update dept_value set departid = #{condition.departid},deptnm = #{condition.deptnm} where deptid = #{condition.deptid}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        delete from dept_value where deptid = #{deptid}
+    </delete>
+
+</mapper>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qunjie.mysql.mapper.CrmCustLogMapper">
+
+    <insert id="add" parameterType="com.qunjie.mysql.model.CrmCustLog">
+        insert into crm_cust_error_log(indocno,date,args,response,method,clazz,systemnm)
+        VALUES (#{condition.indocno},#{condition.date},#{condition.args},#{condition.response},#{condition.method},#{condition.clazz},#{condition.systemnm})
+    </insert>
+</mapper>

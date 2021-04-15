@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/oa_crm?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: JSqj@123
+  mail:
+    host: smtp.qq.com
+    username: 250353401@qq.com
+    password: gdgiadhxhetqbiff
+    port: 587
+    default-encoding: UTF-8
+
+#金蝶数据
+k3cloud:
+  url: http://47.100.203.167/K3Cloud/
+  dbId: 5f46250a7ad252
+  uid: Administrator
+  pwd: 999999999
+  lang: 2052
+
+#纷享销客信息
+fs:
+  appId: FSAID_1319599
+  appSecret: 0d89f64d5e8548d0b6cb923f14c4f7c5
+  permanentCode: D99DBF885DCF101DCCC707042209DE23
+  token: 01705ddef3ac437c9ef5d32626b51208
+  encodingAesKey: YjBlOTAyMjIzMTJmNGVjOTkyNmE5MDEzZjM1NzE2Njc
+  authorize.url: www.fxiaoke.com
+
+#泛微信息
+fanwei:
+  axis:
+    url: http://oa.qunje.com:88/services/WorkflowService?wsdl
+    targetNamespace: webservices.services.weaver.com.cn
+  oa:
+    hrmUrl: http://oa.qunje.com:88/services/HrmService?wsdl
+    hrmTargetNamespace: http://localhost/services/HrmService
+

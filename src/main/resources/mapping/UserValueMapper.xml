@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qunjie.mysql.mapper.UserValueMapper">
+
+    <select id="findByCondition2" parameterType="com.qunjie.mysql.model.UserValue"
+            resultType="com.qunjie.mysql.model.UserValue">
+        select * from user_value
+        <where>
+            <if test="condition.indocno != null">
+                and indocno = #{condition.indocno}
+            </if>
+            <if test="condition.userid != null">
+                and userid = #{condition.userid}
+            </if>
+            <if test="condition.openuserid != null and condition.openuserid != ''">
+                and openuserid = #{condition.openuserid}
+            </if>
+            <if test="condition.mobile != null and condition.mobile != ''">
+                and mobile = #{condition.mobile}
+            </if>
+            <if test="condition.usernm != null and condition.usernm != ''">
+                and usernm = #{condition.usernm}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="findByCondition" parameterType="com.qunjie.mysql.param.UserValueParam"
+            resultType="com.qunjie.mysql.model.UserValue">
+        select * from user_value
+        <where>
+            <if test="condition.indocno != null">
+                and indocno = #{condition.indocno}
+            </if>
+            <if test="condition.userid != null">
+                and userid = #{condition.userid}
+            </if>
+            <if test="condition.openuserid != null and condition.openuserid != ''">
+                and openuserid = #{condition.openuserid}
+            </if>
+            <if test="condition.mobile != null and condition.mobile != ''">
+                and mobile = #{condition.mobile}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertUser" parameterType="com.qunjie.mysql.model.UserValue">
+        insert into user_value(indocno,userid,openuserid,usernm,mobile)
+        value (#{condition.indocno},#{condition.userid},#{condition.openuserid},#{condition.usernm},#{condition.mobile})
+    </insert>
+
+    <update id="updUser" parameterType="com.qunjie.mysql.model.UserValue">
+        update user_value set openuserid = #{condition.openuserid},usernm = #{condition.usernm},mobile = #{condition.mobile} where userid = #{condition.userid}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        delete from user_value where userid = #{condition.userid}
+    </delete>
+</mapper>
