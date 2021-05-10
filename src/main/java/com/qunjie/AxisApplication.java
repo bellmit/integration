@@ -15,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAsync
 public class AxisApplication extends SpringBootServletInitializer{
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(AxisApplication.class, args);
 	}
