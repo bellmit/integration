@@ -130,6 +130,7 @@
 			<groupId>kingdee.bos</groupId>
 			<artifactId>k3cloud-webapi-client</artifactId>
 			<version>1.0.0</version>
+			<systemPath>${basedir}/lib/k3cloud-webapi-client.jar</systemPath>
 		</dependency>
 
 		<dependency>
