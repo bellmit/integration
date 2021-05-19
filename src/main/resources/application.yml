@@ -3,8 +3,8 @@ server:
 
 spring:
   profiles:
-#    active: test
-    active: prod
+    active: test
+#    active: prod
 #  datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource
 #    druid:
